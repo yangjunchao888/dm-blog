@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Build output
+frontend/dist/
+frontend/.vite/
+frontend/*.log
+
+# Python
+backend/.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Data / secrets
+.env
+.env.*
+backend/app/data/*.sqlite3
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+.idea/
+password
