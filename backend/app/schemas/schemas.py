@@ -36,6 +36,7 @@ class TagOut(BaseModel):
 class ArticleBase(BaseModel):
     title: str = Field(min_length=1, max_length=200)
     content_md: str = ""
+    summary: Optional[str] = None
     tags: Optional[List[str]] = None
 
 
@@ -46,6 +47,7 @@ class ArticleCreate(ArticleBase):
 class ArticleUpdate(BaseModel):
     title: Optional[str] = Field(default=None, min_length=1, max_length=200)
     content_md: Optional[str] = None
+    summary: Optional[str] = None
     tags: Optional[List[str]] = None
 
 

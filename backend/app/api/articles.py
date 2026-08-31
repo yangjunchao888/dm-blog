@@ -51,7 +51,7 @@ def get_article(article_id: int, db: Session = Depends(get_db)):
 @router.post("", response_model=ArticleOut, status_code=201)
 def create_article(body: ArticleCreate, db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
     article = article_service.create_article(
-        db, title=body.title, content_md=body.content_md, author_id=current_user.id, tags=body.tags
+        db, title=body.title, content_md=body.content_md, author_id=current_user.id, tags=body.tags, summary=body.summary
     )
     return ArticleOut.model_validate(article)
 
@@ -61,7 +61,7 @@ def update_article(article_id: int, body: ArticleUpdate, db: Session = Depends(g
     article = article_service.get_article(db, article_id)
     if not article:
         raise HTTPException(status_code=404, detail="文章不存在")
-    updated = article_service.update_article(db, article, title=body.title, content_md=body.content_md, tags=body.tags)
+    updated = article_service.update_article(db, article, title=body.title, content_md=body.content_md, summary=body.summary, tags=body.tags)
     return ArticleOut.model_validate(updated)
 
 

@@ -13,6 +13,7 @@ from backend.app.core.security import get_password_hash
 from backend.app.api import auth as auth_api
 from backend.app.api import articles as articles_api
 from backend.app.api import chat as chat_api
+from backend.app.api import ai_write as ai_write_api
 from backend.app.api import tags as tags_api
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -32,6 +33,7 @@ app.include_router(auth_api.router)
 app.include_router(articles_api.router)
 app.include_router(tags_api.router)
 app.include_router(chat_api.router)
+app.include_router(ai_write_api.router)
 
 
 @app.get("/api/health")

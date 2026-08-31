@@ -1,7 +1,7 @@
 <template>
-  <header class="navbar">
+<header class="navbar">
     <div class="container navbar-inner">
-      <router-link class="brand" to="/">DM 博客</router-link>
+      <router-link class="brand" to="/">DM Blog</router-link>
       <nav>
         <router-link to="/articles">文章</router-link>
         <router-link to="/manage">管理</router-link>
@@ -20,10 +20,11 @@ const auth = useAuthStore()
 <style scoped>
 .navbar {
   position: sticky; top: 0; z-index: 10;
-  background: #ffffff;
+  background: #fff;
   border-bottom: 1px solid var(--border);
 }
 .navbar-inner { display: flex; align-items: center; justify-content: space-between; }
-.brand { font-weight: 700; font-size: 18px; }
-nav a { margin-left: 16px; }
+.brand { font-weight: 700; font-size: 18px; color: var(--text); }
+nav a { margin-left: 20px; font-size: 14px; color: var(--muted); }
+nav a:hover { color: var(--brand); }
 </style>

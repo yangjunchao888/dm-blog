@@ -80,7 +80,7 @@ function onClearTag() {
 </script>
 
 <style scoped>
-.list-layout { display: grid; grid-template-columns: 1fr 320px; gap: 16px; }
+.list-layout { display: grid; grid-template-columns: 1fr 300px; gap: 20px; }
 @media (max-width: 1000px) { .list-layout { grid-template-columns: 1fr; } }
 .toolbar { display: flex; gap: 10px; }
 .cards { display: grid; gap: 16px; }
@@ -88,5 +88,6 @@ function onClearTag() {
 .tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip { cursor: pointer; }
 .recommend-list { display: flex; flex-direction: column; gap: 8px; }
-.recommend-item { color: var(--brand-2); }
+.recommend-item { color: var(--brand); }
+.recommend-item:hover { color: var(--brand-2); }
 </style>

@@ -30,3 +30,7 @@ export const tagApi = {
 export const chatApi = {
   send: (message) => api.post('/chat', { message }),
 }
+
+export const aiWriteApi = {
+  write: (body) => api.post('/ai/write', body),
+}

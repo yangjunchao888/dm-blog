@@ -25,7 +25,7 @@
 import { ref, onMounted, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { articleApi } from '../api'
-import { marked } from 'marked'
+import { marked } from '../utils/marked'
 
 const route = useRoute()
 const article = ref({ id: 0, title: '', content_md: '', tags: [] })
@@ -49,7 +49,7 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-.detail-layout { display: grid; grid-template-columns: 1fr 280px; gap: 16px; }
+.detail-layout { display: grid; grid-template-columns: 1fr 260px; gap: 20px; }
 @media (max-width: 1000px) { .detail-layout { grid-template-columns: 1fr; } }
 .article-detail h1 { margin-top: 8px; }
 .tags { margin: 12px 0 16px; }

@@ -1,32 +1,23 @@
 <template>
   <section>
     <div class="hero card">
-      <h1>欢迎来到 DM 博客</h1>
-      <p class="muted">二次元风格 + AI 陪你写博客</p>
-      <div style="margin-top:16px;">
+      <h1>DM Blog</h1>
+      <p class="subtitle">一个简洁的技术博客平台</p>
+      <div class="hero-actions">
         <router-link class="btn" to="/articles">浏览文章</router-link>
-        <button class="btn secondary" style="margin-left:10px;" @click="goManage">开始创作</button>
+        <router-link class="btn secondary" to="/manage/new">开始创作</router-link>
       </div>
     </div>
   </section>
 </template>
 
 <style scoped>
-.hero { padding: 32px; }
+.hero { padding: 48px 32px; text-align: center; }
+.hero h1 { font-size: 28px; margin: 0 0 8px; }
+.subtitle { color: var(--muted); font-size: 15px; }
+.hero-actions { margin-top: 24px; display: flex; gap: 12px; justify-content: center; }
 </style>
 
 <script setup>
-import { useRouter } from 'vue-router'
-import { useAuthStore } from '../stores/auth'
 
-const router = useRouter()
-const auth = useAuthStore()
-
-function goManage() {
-  if (!auth.token) {
-    router.push('/login')
-    return
-  }
-  router.push('/manage')
-}
 </script>

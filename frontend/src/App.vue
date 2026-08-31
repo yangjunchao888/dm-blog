@@ -5,10 +5,12 @@
       <router-view />
     </main>
     <ChatPanel />
+    <Toast />
   </div>
 </template>
 
 <script setup>
 import Navbar from './components/Navbar.vue'
 import ChatPanel from './components/ChatPanel.vue'
+import Toast from './components/Toast.vue'
 </script>
