@@ -5,6 +5,7 @@
       <nav>
         <router-link to="/articles">文章</router-link>
         <router-link to="/manage">管理</router-link>
+        <router-link v-if="auth.token" to="/account">账号</router-link>
         <router-link v-if="!auth.token" to="/login">登录</router-link>
         <a v-else href="#" @click.prevent="auth.logout()">退出</a>
       </nav>

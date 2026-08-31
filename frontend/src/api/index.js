@@ -34,3 +34,8 @@ export const chatApi = {
 export const aiWriteApi = {
   write: (body) => api.post('/ai/write', body),
 }
+
+export const accountApi = {
+  me: () => api.get('/account/me'),
+  changePassword: (body) => api.post('/account/change-password', body),
+}

@@ -10,6 +10,7 @@ const routes = [
   { path: '/manage/edit/:id', name: 'editor-edit', component: () => import('../views/Editor.vue') },
   { path: '/login', name: 'login', component: () => import('../views/Login.vue') },
   { path: '/register', name: 'register', component: () => import('../views/Register.vue') },
+  { path: '/account', name: 'account', component: () => import('../views/Account.vue') },
 ]
 
 const router = createRouter({
