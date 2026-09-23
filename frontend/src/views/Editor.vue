@@ -61,8 +61,10 @@
 
 <script setup>
 import { reactive, ref, computed, onMounted } from 'vue'
+import { watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { marked } from '../utils/marked'
+import { renderMermaid } from '../utils/mermaid'
 import { articleApi, aiWriteApi } from '../api'
 import { useToastStore } from '../stores/toast'
 
@@ -73,6 +75,13 @@ const toast = useToastStore()
 const form = reactive({ id: 0, title: '', content_md: '', tagsText: '', summary: '' })
 const editorRef = ref(null)
 const previewHtml = computed(() => marked.parse(form.content_md || ''))
+
+watch(previewHtml, () => {
+  setTimeout(() => {
+    const el = document.querySelector('.preview')
+    if (el) renderMermaid(el)
+  }, 100)
+})
 
 const aiOpen = ref(true)
 const aiAction = ref('generate')

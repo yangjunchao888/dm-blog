@@ -26,6 +26,7 @@ import { ref, onMounted, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { articleApi } from '../api'
 import { marked } from '../utils/marked'
+import { renderMermaid } from '../utils/mermaid'
 
 const route = useRoute()
 const article = ref({ id: 0, title: '', content_md: '', tags: [] })
@@ -45,6 +46,10 @@ const toc = computed(() => {
 onMounted(async () => {
   const { data } = await articleApi.get(route.params.id)
   article.value = data
+  setTimeout(() => {
+    const el = document.querySelector('.md-body')
+    if (el) renderMermaid(el)
+  }, 100)
 })
 </script>
 

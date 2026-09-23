@@ -80,3 +80,6 @@ a:hover { color: var(--brand-2); }
 .md-body a { color: var(--brand); }
 .md-body ul, .md-body ol { padding-left: 24px; }
 .md-body blockquote { border-left: 3px solid var(--brand); margin: 12px 0; padding: 8px 16px; background: #F8F9FA; color: var(--muted); }
+.mermaid { margin: 16px 0; text-align: center; }
+.mermaid svg { max-width: 100%; }
+.mermaid-error { color: #E53E3E; background: #FFF5F5; padding: 12px; border-radius: 6px; font-size: 13px; }

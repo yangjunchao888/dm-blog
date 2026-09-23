@@ -9,6 +9,12 @@ const renderer = {
     const id = slugify(text)
     return `<h${level} id="${id}">${text}</h${level}>\n`
   },
+  code(code, language) {
+    if (language === 'mermaid') {
+      return `<pre><code class="language-mermaid">${code}</code></pre>`
+    }
+    return false
+  },
 }
 
 marked.use({ breaks: true, gfm: true, renderer })
